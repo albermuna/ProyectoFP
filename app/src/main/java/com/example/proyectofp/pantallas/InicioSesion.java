@@ -3,6 +3,7 @@ package com.example.proyectofp.pantallas;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -50,7 +51,8 @@ public class InicioSesion extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 // Intent a la página de crear Usuario
-
+                Intent i = new Intent(getApplicationContext(), CrearUsuario.class);
+                startActivity(i);
             }
         });
 
@@ -66,8 +68,9 @@ public class InicioSesion extends AppCompatActivity {
                     public void onComplete(@NonNull Task<QuerySnapshot> task) {
                         if (task.isSuccessful()) {
                             if (task.getResult().size() > 0) {
-                                // Las credenciales son correctas, iniciar sesión como paciente
-                                // ...
+                                // Las credenciales son correctas, iniciar sesión como doctor
+                                Intent i = new Intent(getApplicationContext(), SesionDoctor.class);
+                                startActivity(i);
                             } else {
                                 // Las credenciales son incorrectas, mostrar un mensaje de error
                                 // ...
@@ -91,7 +94,8 @@ public class InicioSesion extends AppCompatActivity {
                         if (task.isSuccessful()) {
                             if (task.getResult().size() > 0) {
                                 // Las credenciales son correctas, iniciar sesión como paciente
-                                // ...
+                                Intent i = new Intent(getApplicationContext(), SesionPaciente.class);
+                                startActivity(i);
                             } else {
                                 // Las credenciales son incorrectas, mostrar un mensaje de error
                                 // ...

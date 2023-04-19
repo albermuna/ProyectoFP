@@ -2,12 +2,11 @@ package com.example.proyectofp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 
-import com.example.proyectofp.clasespojo.Centros;
-import com.example.proyectofp.clasespojo.Citas;
-import com.example.proyectofp.clasespojo.Doctores;
-import com.example.proyectofp.clasespojo.Pacientes;
+
+import com.example.proyectofp.pantallas.InicioSesion;
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -28,22 +27,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         conectarBBDD();
         gestion = new GestionBBDD(this);
+        Intent i = new Intent(getApplicationContext(), InicioSesion.class);
+        startActivity(i);
 
-
-        Doctores doctor = new Doctores("12345678A", "Juan",  "Cardiología", new ArrayList<Citas>(), "contraseña");
-        databaseReference.child("Doctores").child(doctor.getDni()).setValue(doctor);
-
-// Escribe un objeto Paciente en la ubicación de la base de datos correspondiente
-        Pacientes paciente = new Pacientes("12345678B", "María", 18, new ArrayList<Citas>(), "contraseña");
-        databaseReference.child("Pacientes").child(paciente.getDni()).setValue(paciente);
-
-// Escribe un objeto Centro en la ubicación de la base de datos correspondiente
-        Centros centro = new Centros("1", "Hospital Central", "Calle Falsa 123", "Madrid", new ArrayList<Doctores>(), new ArrayList<Pacientes>(), new ArrayList<Citas>());
-        databaseReference.child("Centros").child(centro.getUid()).setValue(centro);
-
-// Escribe un objeto Cita en la ubicación de la base de datos correspondiente
-        Citas cita = new Citas("1", "19/05/2023 18:00", doctor, paciente, centro);
-        databaseReference.child("Citas").child(cita.getUid()).setValue(cita);
     }
 
     private void conectarBBDD() {
