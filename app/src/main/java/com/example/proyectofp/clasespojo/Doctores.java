@@ -38,8 +38,6 @@ public class Doctores {
     public void setNombreApellidos(String nombreApellidos) {
         this.nombreApellidos = nombreApellidos;
     }
-
-
     public String getEspecialidad() {
         return especialidad;
     }

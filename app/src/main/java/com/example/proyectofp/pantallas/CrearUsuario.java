@@ -1,7 +1,9 @@
 package com.example.proyectofp.pantallas;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -20,7 +22,7 @@ import java.util.ArrayList;
 
 public class CrearUsuario extends AppCompatActivity {
 
-    private String nombreObj, dniObj, contraseñaObj, especialidadObj;
+    private String nombreObj, dniObj, contraseñaObj, especialidadObj, variableObj;
     private Integer edadObj;
     private EditText nombreApellidos, dni,  contraseña, variable;
     private TextView variableTV;
@@ -34,6 +36,7 @@ public class CrearUsuario extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_crear_usuario);
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
         nombreApellidos = findViewById(R.id.nombreApellidosEditText);
         dni = findViewById(R.id.dniEditText);
         contraseña = findViewById(R.id.contraseñaEditText);
@@ -65,60 +68,53 @@ public class CrearUsuario extends AppCompatActivity {
         añadir.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(comprobarDatosRellenados()) {
+                variableObj = variable.getText().toString();
+                nombreObj = nombreApellidos.getText().toString();
+                dniObj = dni.getText().toString();
+                contraseñaObj = contraseña.getText().toString();
+                if(variableObj.equals("") || nombreObj.equals("") || dniObj.equals("") || contraseñaObj.equals("")) {
+                    comprobarDatosRellenados();
+                } else {
                     ArrayList<Citas> listaCitas = new ArrayList<Citas>();
-                    nombreObj = nombreApellidos.getText().toString();
-                    dniObj = dni.getText().toString();
-                    contraseñaObj = contraseña.getText().toString();
+
                     if (esDoctor) {
                         especialidadObj = variable.getText().toString();
                         Doctores doc = new Doctores(dniObj, nombreObj, especialidadObj, listaCitas, contraseñaObj);
                         gestion.introducirDoctor(doc);
+                        builder.setTitle("Añadir usuario");
+                        builder.setMessage("El usuario se ha añadido correctamente");
+                        builder.setPositiveButton("Aceptar", null);
+                        AlertDialog dialog = builder.create();
+                        dialog.show();
                     } else {
                         edadObj = Integer.parseInt(variable.getText().toString());
                         Pacientes pac = new Pacientes(dniObj, nombreObj, edadObj, listaCitas, contraseñaObj);
                         gestion.introducirPaciente(pac);
                     }
-
+                    Intent i = new Intent(getApplicationContext(), InicioSesion.class);
+                    startActivity(i);
                 }
             }
         });
-
-
-
     }
 
-    private boolean comprobarDatosRellenados() {
-        Boolean valido = true;
-        String nombreApellidosComp, dniComp, contraseñaComp;
+    private void comprobarDatosRellenados() {
+        String nombreApellidosComp, dniComp, contraseñaComp, variableComp;
         nombreApellidosComp = nombreApellidos.getText().toString();
         dniComp = dni.getText().toString();
         contraseñaComp = contraseña.getText().toString();
-        if (esDoctor) {
-            String especialidadComp = variable.getText().toString();
-            if (especialidadComp.equals("")) {
-                variable.setError("Required");
-                valido = false;
-            }
-        }else {
-            Integer edadComp = Integer.parseInt(variable.getText().toString());
-            if (edadComp.equals("")) {
-                variable.setError("Required");
-                valido = false;
-            }
+        variableComp = variable.getText().toString();
+        if (variableComp.equals("")) {
+            variable.setError("Required");
         }
         if (nombreApellidosComp.equals("")) {
             nombreApellidos.setError("Required");
-            valido = false;
         }
         if (dniComp.equals("")) {
             dni.setError("Required");
-            valido = false;
         }
         if (contraseñaComp.equals("")) {
             contraseña.setError("Required");
-            valido = false;
         }
-        return valido;
     }
 }
