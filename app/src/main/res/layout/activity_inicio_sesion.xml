@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:layout_marginTop="250dp"
+    tools:context=".pantallas.InicioSesion">
+
+
+
+    <TextView
+        android:id="@+id/dniTextView"
+        android:textSize="18dp"
+        android:layout_marginLeft="3dp"
+        android:textStyle="bold"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:text="DNI:" />
+
+    <EditText
+        android:id="@+id/dniEditText"
+        android:layout_marginBottom="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="DNI" android:minHeight="48dp"/>
+
+    <TextView
+        android:id="@+id/contraseñaTextView"
+        android:textSize="18dp"
+        android:layout_marginLeft="3dp"
+        android:textStyle="bold"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:text="Contraseña:" />
+
+    <EditText
+        android:id="@+id/contraseñaEditText"
+        android:layout_marginBottom="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Contraseña" android:minHeight="48dp"/>
+
+    <Button
+        android:id="@+id/entrarButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cornerRadius="20dp"
+        android:backgroundTint="@android:color/black"
+        android:textColor="@android:color/white"
+        android:text="Entrar" />
+
+    <TextView
+        android:id="@+id/crearUsuarioTextView"
+        android:textSize="18dp"
+        android:layout_marginLeft="3dp"
+        android:textStyle="bold"
+        android:layout_marginTop="30dp"
+        android:textAlignment="center"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:onClick="irCrearUsuario"
+        android:text="Crear usuario" android:minHeight="48dp"/>
+
+</LinearLayout>

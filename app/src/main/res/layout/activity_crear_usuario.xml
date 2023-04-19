@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:layout_marginTop="10dp"
+    tools:context=".pantallas.CrearUsuario">
+
+    <TextView
+        android:id="@+id/nombreApellidosTextView"
+        android:textSize="18dp"
+        android:layout_marginLeft="3dp"
+        android:textStyle="bold"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:text="Nombre y apellidos:" />
+
+    <EditText
+        android:id="@+id/nombreApellidosEditText"
+        android:layout_marginBottom="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Nombre y apellidos" />
+
+    <TextView
+        android:id="@+id/dniTextView"
+        android:textSize="18dp"
+        android:layout_marginLeft="3dp"
+        android:textStyle="bold"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:text="DNI:" />
+
+    <EditText
+        android:id="@+id/dniEditText"
+        android:layout_marginBottom="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="DNI" />
+
+    <TextView
+        android:id="@+id/contraseñaTextView"
+        android:textSize="18dp"
+        android:layout_marginLeft="3dp"
+        android:textStyle="bold"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:text="Contraseña:" />
+
+    <EditText
+        android:id="@+id/contraseñaEditText"
+        android:layout_marginBottom="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Contraseña" />
+
+    <TextView
+        android:id="@+id/tipoTextView"
+        android:textSize="18dp"
+        android:layout_marginLeft="3dp"
+        android:textStyle="bold"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:text="Tipo:" />
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginRight="20dp">
+
+        <RadioButton
+            android:id="@+id/doctorRB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Doctor" />
+
+        <RadioButton
+            android:id="@+id/pacienteRB"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Paciente" />
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/variableTextView"
+        android:textSize="18dp"
+        android:layout_marginLeft="3dp"
+        android:textStyle="bold"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:text="" />
+
+    <EditText
+        android:id="@+id/variableEditText"
+        android:layout_marginBottom="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="" />
+
+
+
+    <Button
+        android:id="@+id/añadirButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cornerRadius="20dp"
+        android:backgroundTint="@android:color/black"
+        android:textColor="@android:color/white"
+        android:text="Añadir" />
+
+</LinearLayout>
