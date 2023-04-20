@@ -11,6 +11,8 @@ import com.google.firebase.FirebaseApp;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+import java.util.List;
+
 
 public class GestionBBDD {
 
@@ -38,6 +40,16 @@ public class GestionBBDD {
     public void introducirCita (Citas cit) {
         databaseReference.child("Citas").child(cit.getUid()).setValue(cit);
     }
+
+    public void modificarDatoSimple (String tipoDato, String referencia, String datoModificar, String datoModificado) {
+        databaseReference.child(tipoDato).child(referencia).child(datoModificar).setValue(datoModificado);
+    }
+
+    public void modificarDatoObjeto (String tipoDato, String referencia, String datoModificar, List<Object> listaObjeto) {
+        databaseReference.child(tipoDato).child(referencia).child(datoModificar).setValue(listaObjeto);
+    }
+
+
 
 
 
