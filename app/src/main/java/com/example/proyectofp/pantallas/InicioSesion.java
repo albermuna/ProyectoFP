@@ -1,6 +1,7 @@
 package com.example.proyectofp.pantallas;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -8,22 +9,22 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.example.proyectofp.R;
+import com.example.proyectofp.pantallas.doctor.SesionDoctor;
+import com.example.proyectofp.pantallas.paciente.SesionPaciente;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
-import com.google.firebase.database.DataSnapshot;
-import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.Query;
-import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QuerySnapshot;
 
 public class InicioSesion extends AppCompatActivity {
     TextView nuevoUsuario;
+    View entrarButton;
     EditText dni, contraseña;
     Button entrar;
     Button crearUsuario;
@@ -33,11 +34,11 @@ public class InicioSesion extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_inicio_sesion);
-        nuevoUsuario = findViewById(R.id.crearUsuarioTextView);
+
         contraseña = findViewById(R.id.contraseñaEditText);
         dni = findViewById(R.id.dniEditText);
-        entrar = findViewById(R.id.entrarButton);
-        FirebaseFirestore db = FirebaseFirestore.getInstance();
+        entrarButton = findViewById(R.id.entrarButton);
+        DatabaseReference db = FirebaseDatabase.getInstance().getReference();
         entrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -59,6 +60,7 @@ public class InicioSesion extends AppCompatActivity {
     }
 
     private void validarDoctor(String dniUsuario, String contraseñaUsuario) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
         db.collection("Doctores")
                 .whereEqualTo("dni", dniUsuario)
                 .whereEqualTo("contraseña", contraseñaUsuario)
@@ -73,17 +75,26 @@ public class InicioSesion extends AppCompatActivity {
                                 startActivity(i);
                             } else {
                                 // Las credenciales son incorrectas, mostrar un mensaje de error
-                                // ...
+                                builder.setTitle("Inicio sesión");
+                                builder.setMessage("El dni o la contraseña son incorrectos, vuelva a intentarlo.");
+                                builder.setPositiveButton("Aceptar", null);
+                                AlertDialog dialog = builder.create();
+                                dialog.show();
                             }
                         } else {
                             // Error al comprobar las credenciales, mostrar un mensaje de error
-                            // ...
+                            builder.setTitle("Inicio sesión");
+                            builder.setMessage("No se ha podido realizar el inicio de sesión, disculpe las molestias.");
+                            builder.setPositiveButton("Aceptar", null);
+                            AlertDialog dialog = builder.create();
+                            dialog.show();
                         }
                     }
                 });
     }
 
     private void validarPaciente(String dniUsuario, String contraseñaUsuario) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
         db.collection("Pacientes")
                 .whereEqualTo("dni", dniUsuario)
                 .whereEqualTo("contraseña", contraseñaUsuario)
@@ -98,11 +109,19 @@ public class InicioSesion extends AppCompatActivity {
                                 startActivity(i);
                             } else {
                                 // Las credenciales son incorrectas, mostrar un mensaje de error
-                                // ...
+                                builder.setTitle("Inicio sesión");
+                                builder.setMessage("La contraseña es incorrecta, vuelva a intentarlo.");
+                                builder.setPositiveButton("Aceptar", null);
+                                AlertDialog dialog = builder.create();
+                                dialog.show();
                             }
                         } else {
                             // Error al comprobar las credenciales, mostrar un mensaje de error
-                            // ...
+                            builder.setTitle("Inicio sesión");
+                            builder.setMessage("El dni que ha introducido no pertenece a ningún usuario.");
+                            builder.setPositiveButton("Aceptar", null);
+                            AlertDialog dialog = builder.create();
+                            dialog.show();
                         }
                     }
                 });

@@ -1,0 +1,108 @@
+<HorizontalScrollView xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent" android:layout_height="wrap_content" >
+
+    <ScrollView android:id="@+id/pantalla_inicio"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent" >
+
+        <RelativeLayout android:id="@+id/content_container"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <RelativeLayout android:id="@+id/page_pantalla_inicio_ek1"
+                android:layout_marginTop="0dp"
+                android:layout_marginStart="0dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                >
+
+                <View   android:id="@+id/_bg__pantalla_inicio_ek2"
+                    android:background="@drawable/_bg__pantalla_inicio_ek2_shape"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_width="360dp"
+                    android:layout_height="632dp" />
+
+
+                <RelativeLayout android:id="@+id/t_tulo_ek4"
+                    android:layout_marginTop="56dp"
+                    android:layout_marginStart="96.5dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    >
+
+                    <TextView android:id="@+id/medicaid_ek4"
+                        android:textStyle="bold"
+                        android:textSize="38sp"
+                        android:textColor="@color/reservar_color"
+                        android:layout_marginLeft="0dp"
+                        android:layout_marginTop="0dp"
+                        android:layout_width="208dp"
+                        android:layout_height="79dp"
+                        android:text="@string/medicaid_ek4_string"
+                        />
+
+                    <TextView android:id="@+id/health_management_software_ek4"
+                        android:textStyle="bold"
+                        android:textSize="12sp"
+                        android:textColor="@color/reservar_color"
+                        android:layout_marginLeft="0dp"
+                        android:layout_marginTop="49dp"
+                        android:layout_width="184dp"
+                        android:layout_height="24dp"
+                        android:text="@string/health_management_software_ek4_string"
+                        />
+
+                </RelativeLayout>
+
+                <ImageView android:id="@+id/image_1"
+                    android:src="@drawable/image_1"
+                    android:contentDescription="image_1"
+                    android:layout_marginStart="97dp"
+                    android:layout_marginTop="168dp"
+                    android:layout_width="166dp"
+                    android:layout_height="232dp" />
+
+
+                <RelativeLayout android:id="@+id/login_button_ek1"
+                    android:layout_marginTop="447dp"
+                    android:layout_marginStart="55dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    >
+
+                    <View   android:id="@+id/rectangle_1_ek5"
+                        android:background="@drawable/rectangle_1_ek5_shape"
+                        android:layout_marginStart="0dp"
+                        android:layout_marginTop="0dp"
+                        android:layout_width="250dp"
+                        android:layout_height="64dp" />
+
+                    <TextView android:id="@+id/entrar_ek1"
+                        android:textStyle="bold"
+                        android:textSize="20sp"
+                        android:textColor="@color/reservar_color"
+                        android:layout_marginLeft="96dp"
+                        android:layout_marginTop="19dp"
+                        android:layout_width="83dp"
+                        android:layout_height="41dp"
+                        android:text="@string/entrar_ek1_string"
+                        />
+
+                </RelativeLayout>
+
+                <TextView android:id="@+id/no_tienes_una_cuenta__registrate"
+                    android:textSize="13sp"
+                    android:textColor="@color/reservar_color"
+                    android:layout_marginLeft="84dp"
+                    android:layout_marginTop="558dp"
+                    android:layout_width="210.5dp"
+                    android:layout_height="27.5dp"
+                    android:text="@string/no_tienes_una_cuenta__registrate_string"
+                    />
+
+            </RelativeLayout>
+        </RelativeLayout>
+
+    </ScrollView>
+</HorizontalScrollView>
