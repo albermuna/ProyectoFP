@@ -5,12 +5,15 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.proyectofp.R;
+import com.example.proyectofp.clasespojo.Pacientes;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DataSnapshot;
@@ -20,6 +23,7 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
 public class InicioSesion extends AppCompatActivity {
@@ -27,7 +31,7 @@ public class InicioSesion extends AppCompatActivity {
     EditText dni, contraseña;
     Button entrar;
     Button crearUsuario;
-    FirebaseFirestore db = FirebaseFirestore.getInstance();
+    DatabaseReference dbRef = FirebaseDatabase.getInstance().getReference();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,14 +41,44 @@ public class InicioSesion extends AppCompatActivity {
         contraseña = findViewById(R.id.contraseñaEditText);
         dni = findViewById(R.id.dniEditText);
         entrar = findViewById(R.id.entrarButton);
-        FirebaseFirestore db = FirebaseFirestore.getInstance();
         entrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 String dniUsuario = dni.getText().toString();
-                String contraseñaUsuario = contraseña.getText().toString();
-                validarPaciente(dniUsuario, contraseñaUsuario);
-                validarDoctor(dniUsuario, contraseñaUsuario);
+                String contraseñaUsuario = contraseña.getText().toString().trim();
+                //validarPaciente(dniUsuario, contraseñaUsuario);
+                //validarDoctor(dniUsuario, contraseñaUsuario);
+                dbRef.child("Pacientes").addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        if(snapshot.exists()){
+                            for(DataSnapshot ds: snapshot.getChildren()){
+                                if(ds.child("dni").getValue().equals(dniUsuario)) {
+                                    String contraseñaBaseDeDatos = ds.child("contraseña").getValue(String.class).trim();
+                                    Log.d("InicioSesion", "Contraseña de la base de datos: " + contraseñaBaseDeDatos);
+                                    Log.d("TextView", "Contraseña del usuario: " + contraseñaUsuario);
+                                    Log.d("Prueba", "Comparacion"+(contraseñaBaseDeDatos.equals(contraseñaUsuario)));
+                                    if(contraseñaBaseDeDatos.equals(contraseñaUsuario)) {
+                                        Pacientes paciente = new Pacientes();
+                                        paciente.setDni(ds.child("dni").getValue(String.class));
+                                        paciente.setContraseña(ds.child("contraseña").getValue(String.class));
+                                        Intent intent = new Intent(getApplicationContext(), SesionPaciente.class);
+                                        //intent.putExtra("Pacientes", paciente);
+                                        startActivity(intent);
+                                    } else {
+                                        Toast.makeText(getApplicationContext(), "Contraseña incorrecta", Toast.LENGTH_SHORT).show();
+                                    }
+                                    break;
+                                }
+                            }
+                        }
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+                    }
+                }); // falta cerrar el paréntesis aquí
             }
         });
         nuevoUsuario.setOnClickListener(new View.OnClickListener() {
@@ -57,56 +91,7 @@ public class InicioSesion extends AppCompatActivity {
         });
 
     }
-
-    private void validarDoctor(String dniUsuario, String contraseñaUsuario) {
-        db.collection("Doctores")
-                .whereEqualTo("dni", dniUsuario)
-                .whereEqualTo("contraseña", contraseñaUsuario)
-                .get()
-                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-                    @Override
-                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                        if (task.isSuccessful()) {
-                            if (task.getResult().size() > 0) {
-                                // Las credenciales son correctas, iniciar sesión como doctor
-                                Intent i = new Intent(getApplicationContext(), SesionDoctor.class);
-                                startActivity(i);
-                            } else {
-                                // Las credenciales son incorrectas, mostrar un mensaje de error
-                                // ...
-                            }
-                        } else {
-                            // Error al comprobar las credenciales, mostrar un mensaje de error
-                            // ...
-                        }
-                    }
-                });
-    }
-
-    private void validarPaciente(String dniUsuario, String contraseñaUsuario) {
-        db.collection("Pacientes")
-                .whereEqualTo("dni", dniUsuario)
-                .whereEqualTo("contraseña", contraseñaUsuario)
-                .get()
-                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-                    @Override
-                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                        if (task.isSuccessful()) {
-                            if (task.getResult().size() > 0) {
-                                // Las credenciales son correctas, iniciar sesión como paciente
-                                Intent i = new Intent(getApplicationContext(), SesionPaciente.class);
-                                startActivity(i);
-                            } else {
-                                // Las credenciales son incorrectas, mostrar un mensaje de error
-                                // ...
-                            }
-                        } else {
-                            // Error al comprobar las credenciales, mostrar un mensaje de error
-                            // ...
-                        }
-                    }
-                });
-    }
-
-
 }
+
+
+
