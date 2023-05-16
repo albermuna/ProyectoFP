@@ -13,7 +13,9 @@ public class Pacientes {
     private String contraseña;
 
     private List<Citas> citasPaciente;
+    public Pacientes(){
 
+    }
     public Pacientes(String dni, String nombre, Integer edad, ArrayList<Citas> citas, String contraseña) {
         this.dni = dni;
         this.nombreApellidos = nombre;
