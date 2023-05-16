@@ -1,7 +1,6 @@
 package com.example.proyectofp.pantallas;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -10,22 +9,18 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.proyectofp.R;
 import com.example.proyectofp.clasespojo.Pacientes;
-
-import com.example.proyectofp.pantallas.doctor.SesionDoctor;
-import com.example.proyectofp.pantallas.paciente.SesionPaciente;
-
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
@@ -33,7 +28,6 @@ import com.google.firebase.firestore.QuerySnapshot;
 
 public class InicioSesion extends AppCompatActivity {
     TextView nuevoUsuario;
-    View entrarButton;
     EditText dni, contraseña;
     Button entrar;
     Button crearUsuario;
@@ -43,13 +37,11 @@ public class InicioSesion extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_inicio_sesion);
-
+        nuevoUsuario = findViewById(R.id.crearUsuarioTextView);
         contraseña = findViewById(R.id.contraseñaEditText);
         dni = findViewById(R.id.dniEditText);
-
-        entrarButton = findViewById(R.id.entrarButton);
-        
-        entrarButton.setOnClickListener(new View.OnClickListener() {
+        entrar = findViewById(R.id.entrarButton);
+        entrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 String dniUsuario = dni.getText().toString();
@@ -100,7 +92,6 @@ public class InicioSesion extends AppCompatActivity {
 
     }
 }
-
 
 
 
