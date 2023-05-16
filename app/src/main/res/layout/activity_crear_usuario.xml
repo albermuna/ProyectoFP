@@ -1,116 +1,199 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
-    android:padding="16dp"
-    android:layout_marginTop="10dp"
-    tools:context=".pantallas.CrearUsuario">
+<HorizontalScrollView xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent" android:layout_height="wrap_content" >
 
-    <TextView
-        android:id="@+id/nombreApellidosTextView"
-        android:textSize="18dp"
-        android:layout_marginLeft="3dp"
-        android:textStyle="bold"
-        android:layout_height="wrap_content"
+    <ScrollView android:id="@+id/crear_usuario"
         android:layout_width="wrap_content"
-        android:text="Nombre y apellidos:" />
+        android:layout_height="match_parent" >
 
-    <EditText
-        android:id="@+id/nombreApellidosEditText"
-        android:layout_marginBottom="10dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Nombre y apellidos" />
-
-    <TextView
-        android:id="@+id/dniTextView"
-        android:textSize="18dp"
-        android:layout_marginLeft="3dp"
-        android:textStyle="bold"
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-        android:text="DNI:" />
-
-    <EditText
-        android:id="@+id/dniEditText"
-        android:layout_marginBottom="10dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="DNI" />
-
-    <TextView
-        android:id="@+id/contraseñaTextView"
-        android:textSize="18dp"
-        android:layout_marginLeft="3dp"
-        android:textStyle="bold"
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-        android:text="Contraseña:" />
-
-    <EditText
-        android:id="@+id/contraseñaEditText"
-        android:layout_marginBottom="10dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Contraseña" />
-
-    <TextView
-        android:id="@+id/tipoTextView"
-        android:textSize="18dp"
-        android:layout_marginLeft="3dp"
-        android:textStyle="bold"
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-        android:text="Tipo:" />
-
-    <RadioGroup
-        android:id="@+id/radioGroup"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginRight="20dp">
-
-        <RadioButton
-            android:id="@+id/doctorRB"
+        <RelativeLayout android:id="@+id/content_container"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Doctor" />
+            android:layout_height="wrap_content" >
 
-        <RadioButton
-            android:id="@+id/pacienteRB"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Paciente" />
-    </RadioGroup>
+            <RelativeLayout android:id="@+id/page_crear_usuario_ek1"
+                android:layout_marginTop="0dp"
+                android:layout_marginStart="0dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                >
 
-    <TextView
-        android:id="@+id/variableTextView"
-        android:textSize="18dp"
-        android:layout_marginLeft="3dp"
-        android:textStyle="bold"
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-        android:text="" />
-
-    <EditText
-        android:id="@+id/variableEditText"
-        android:layout_marginBottom="10dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="" />
+                <View   android:id="@+id/_bg__crear_usuario_ek2"
+                    android:background="@drawable/_bg__crear_usuario_ek2_shape"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_width="360dp"
+                    android:layout_height="640dp" />
 
 
+                <RelativeLayout android:id="@+id/t_tulo_ek2"
+                    android:layout_marginTop="65dp"
+                    android:layout_marginStart="97dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    >
 
-    <Button
-        android:id="@+id/añadirButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:cornerRadius="20dp"
-        android:backgroundTint="@android:color/black"
-        android:textColor="@android:color/white"
-        android:text="Añadir" />
+                    <TextView android:id="@+id/medicaid_ek2"
+                        android:textStyle="bold"
+                        android:textSize="38sp"
+                        android:textColor="@color/reservar_color"
+                        android:layout_marginLeft="0dp"
+                        android:layout_marginTop="0dp"
+                        android:layout_width="208dp"
+                        android:layout_height="79dp"
+                        android:text="@string/medicaid_ek2_string"
+                        />
 
-</LinearLayout>
+                    <TextView android:id="@+id/health_management_software_ek2"
+                        android:textStyle="bold"
+                        android:textSize="12sp"
+                        android:textColor="@color/reservar_color"
+                        android:layout_marginLeft="0dp"
+                        android:layout_marginTop="49dp"
+                        android:layout_width="184dp"
+                        android:layout_height="24dp"
+                        android:text="@string/health_management_software_ek2_string"
+                        />
+
+                </RelativeLayout>
+
+                <View   android:id="@+id/rectangle_2"
+                    android:background="@drawable/rectangle_2_shape"
+                    android:layout_marginStart="26dp"
+                    android:layout_marginTop="209dp"
+                    android:layout_width="309dp"
+                    android:layout_height="380dp" />
+
+                <TextView android:id="@+id/bienvenido_a_medicaid"
+                    android:textSize="18sp"
+                    android:textColor="@color/rectangle_3_color"
+                    android:layout_marginLeft="88dp"
+                    android:layout_marginTop="236dp"
+                    android:layout_width="208dp"
+                    android:layout_height="38dp"
+                    android:text="@string/bienvenido_a_medicaid_string"
+                    />
+
+
+                <RelativeLayout android:id="@+id/create_user_button"
+                    android:layout_marginTop="507dp"
+                    android:layout_marginStart="55dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    >
+
+                    <View   android:id="@+id/crearUsuarioButton"
+                        android:background="@drawable/rectangle_1_shape"
+                        android:layout_marginStart="0dp"
+                        android:layout_marginTop="0dp"
+                        android:layout_width="250dp"
+                        android:layout_height="64dp" />
+
+                    <TextView android:id="@+id/crear_usuario_ek3"
+                        android:textStyle="bold"
+                        android:textSize="20sp"
+                        android:textColor="@color/reservar_color"
+                        android:layout_marginLeft="63dp"
+                        android:layout_marginTop="19dp"
+                        android:layout_width="150dp"
+                        android:layout_height="41dp"
+                        android:text="@string/crear_usuario_ek3_string"
+                        />
+
+                </RelativeLayout>
+
+
+                <RelativeLayout android:id="@+id/password2"
+                    android:layout_marginTop="443dp"
+                    android:layout_marginStart="80dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    >
+
+
+
+                    <EditText android:id="@+id/confirmaContraseñaEditText"
+                        android:textSize="16sp"
+                        android:textColor="@color/line_1_color"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="0dp"
+                        android:layout_width="188dp"
+                        android:layout_height="wrap_content"
+                        android:text="Confirma tu contraseña"
+                        />
+
+                </RelativeLayout>
+
+
+                <RelativeLayout android:id="@+id/password1"
+                    android:layout_marginTop="399dp"
+                    android:layout_marginStart="80dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    >
+
+
+
+                    <EditText android:id="@+id/contraseñaEditText"
+                        android:textSize="16sp"
+                        android:textColor="@color/line_1_color"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="0dp"
+                        android:layout_width="103dp"
+                        android:layout_height="wrap_content"
+                        android:text="Contraseña"
+                        />
+
+                </RelativeLayout>
+
+
+                <RelativeLayout android:id="@+id/dni"
+                    android:layout_marginTop="354dp"
+                    android:layout_marginStart="80dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    >
+
+
+
+                    <EditText android:id="@+id/dniEditText"
+                        android:textSize="16sp"
+                        android:textColor="@color/line_1_color"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="0dp"
+                        android:layout_width="46dp"
+                        android:layout_height="wrap_content"
+                        android:text="@string/dni_ek1_string"
+                        />
+
+                </RelativeLayout>
+
+
+                <RelativeLayout android:id="@+id/nombre_y_apellidos_ek2"
+                    android:layout_marginTop="305dp"
+                    android:layout_marginStart="80dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    >
+
+
+
+                    <EditText android:id="@+id/nombreApellidosEditText"
+                        android:textSize="16sp"
+                        android:textColor="@color/line_1_color"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="0dp"
+                        android:layout_width="164dp"
+                        android:layout_height="wrap_content"
+                        android:text="Nombre y apellidos"
+                        />
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+
+
+
+        </RelativeLayout>
+
+    </ScrollView>
+</HorizontalScrollView>

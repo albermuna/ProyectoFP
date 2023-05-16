@@ -1,9 +1,155 @@
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".pantallas.PedirCitaPaciente">
+<HorizontalScrollView xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent" android:layout_height="wrap_content" >
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <ScrollView android:id="@+id/pedir_cita_paciente"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent" >
+
+        <RelativeLayout android:id="@+id/content_container"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+
+
+            <RelativeLayout android:id="@+id/page_pedir_cita_paciente_ek1"
+                android:layout_marginTop="0dp"
+                android:layout_marginStart="0dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                >
+
+                <View   android:id="@+id/_bg__pedir_cita_paciente_ek2"
+                    android:background="@drawable/_bg__pedir_cita_paciente_ek2_shape"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_width="360dp"
+                    android:layout_height="640dp" />
+
+
+                <RelativeLayout android:id="@+id/reservas_boton"
+                    android:layout_marginTop="551dp"
+                    android:layout_marginStart="50dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    >
+
+                    <View   android:id="@+id/rectangle_3"
+                        android:background="@drawable/rectangle_3_shape"
+                        android:layout_marginStart="0dp"
+                        android:layout_marginTop="0dp"
+                        android:layout_width="259dp"
+                        android:layout_height="70dp" />
+
+                    <TextView android:id="@+id/reservar"
+                        android:textStyle="bold"
+                        android:textSize="24sp"
+                        android:textColor="@color/reservar_color"
+                        android:layout_marginLeft="74dp"
+                        android:layout_marginTop="17dp"
+                        android:layout_width="140dp"
+                        android:layout_height="52dp"
+                        android:text="@string/reservar_string"
+                        />
+
+                </RelativeLayout>
+
+
+                <RelativeLayout android:id="@+id/parte_inicial_arriba"
+                    android:layout_marginTop="18dp"
+                    android:layout_marginStart="21dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    >
+
+                    <TextView android:id="@+id/pedir_cita"
+                        android:textStyle="bold"
+                        android:textSize="36sp"
+                        android:textColor="@color/reservar_color"
+                        android:layout_marginLeft="76dp"
+                        android:layout_marginTop="52dp"
+                        android:layout_width="198dp"
+                        android:layout_height="74dp"
+                        android:text="@string/pedir_cita_string"
+                        />
+
+
+                    <RelativeLayout android:id="@+id/home_buttons"
+                        android:layout_marginTop="0dp"
+                        android:layout_marginStart="0dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        >
+
+                        <ImageView android:id="@+id/home"
+                            android:src="@drawable/home"
+                            android:contentDescription="home"
+                            android:layout_marginStart="0dp"
+                            android:layout_marginTop="0dp"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp" />
+
+                        <ImageView android:id="@+id/settings"
+                            android:src="@drawable/settings"
+                            android:contentDescription="settings"
+                            android:layout_marginStart="278dp"
+                            android:layout_marginTop="0dp"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp" />
+
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+                <TextView android:id="@+id/seleccione_el_d_a"
+                    android:textStyle="bold"
+                    android:textSize="22sp"
+                    android:textColor="@color/reservar_color"
+                    android:layout_marginLeft="41dp"
+                    android:layout_marginTop="137dp"
+                    android:layout_width="197dp"
+                    android:layout_height="45dp"
+                    android:text="@string/seleccione_el_d_a_string"
+                    />
+
+                <TextView android:id="@+id/seleccione_la_hora"
+                    android:textStyle="bold"
+                    android:textSize="22sp"
+                    android:textColor="@color/reservar_color"
+                    android:layout_marginLeft="41dp"
+                    android:layout_marginTop="390dp"
+                    android:layout_width="213dp"
+                    android:layout_height="45dp"
+                    android:text="@string/seleccione_la_hora_string"
+                    />
+
+
+                <RelativeLayout android:id="@+id/desplegable"
+                    android:layout_marginTop="450dp"
+                    android:layout_marginStart="41dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    >
+
+                    <View   android:id="@+id/rectangle_4"
+                        android:background="@drawable/rectangle_4_shape"
+                        android:layout_marginStart="0dp"
+                        android:layout_marginTop="0dp"
+                        android:layout_width="289dp"
+                        android:layout_height="55dp" />
+
+                    <ImageView android:id="@+id/flecha"
+                        android:src="@drawable/flecha"
+                        android:contentDescription="flecha"
+                        android:layout_marginStart="244dp"
+                        android:layout_marginTop="18dp"
+                        android:layout_width="30dp"
+                        android:layout_height="22dp" />
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+        </RelativeLayout>
+
+    </ScrollView>
+</HorizontalScrollView>

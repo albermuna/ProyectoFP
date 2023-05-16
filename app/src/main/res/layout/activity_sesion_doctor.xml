@@ -1,9 +1,222 @@
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".pantallas.SesionDoctor">
+<HorizontalScrollView xmlns:android="http://schemas.android.com/apk/res/android" xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent" android:layout_height="wrap_content" >
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <ScrollView android:id="@+id/home_doctor"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent" >
+
+        <RelativeLayout android:id="@+id/content_container"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+
+
+
+
+
+
+            <RelativeLayout android:id="@+id/page_home_doctor_ek1"
+                android:layout_marginTop="0dp"
+                android:layout_marginStart="0dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                >
+
+                <View   android:id="@+id/_bg__home_doctor_ek2"
+                    android:background="@drawable/_bg__home_doctor_ek2_shape"
+                    android:layout_marginStart="0dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_width="360dp"
+                    android:layout_height="640dp" />
+
+
+                <RelativeLayout android:id="@+id/t_tulo_ek1"
+                    android:layout_marginTop="540dp"
+                    android:layout_marginStart="103dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    >
+
+                    <TextView android:id="@+id/medicaid_ek1"
+                        android:textStyle="bold"
+                        android:textSize="38sp"
+                        android:textColor="@color/reservar_color"
+                        android:layout_marginLeft="0dp"
+                        android:layout_marginTop="0dp"
+                        android:layout_width="208dp"
+                        android:layout_height="79dp"
+                        android:text="@string/medicaid_ek1_string"
+                        />
+
+                    <TextView android:id="@+id/health_management_software_ek1"
+                        android:textStyle="bold"
+                        android:textSize="12sp"
+                        android:textColor="@color/reservar_color"
+                        android:layout_marginLeft="0dp"
+                        android:layout_marginTop="49dp"
+                        android:layout_width="184dp"
+                        android:layout_height="24dp"
+                        android:text="@string/health_management_software_ek1_string"
+                        />
+
+                </RelativeLayout>
+
+
+                <RelativeLayout android:id="@+id/calendario_ek1"
+                    android:layout_marginTop="388dp"
+                    android:layout_marginStart="50dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    >
+
+
+                    <RelativeLayout android:id="@+id/opciones_ek2"
+                        android:layout_marginTop="0dp"
+                        android:layout_marginStart="0dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        >
+
+                        <View   android:id="@+id/rectangle_3_ek5"
+                            android:background="@drawable/rectangle_3_ek5_shape"
+                            android:layout_marginStart="0dp"
+                            android:layout_marginTop="0dp"
+                            android:layout_width="259dp"
+                            android:layout_height="70dp" />
+
+                        <TextView android:id="@+id/calendario_ek2"
+                            android:textStyle="bold"
+                            android:textSize="24sp"
+                            android:textColor="@color/reservar_color"
+                            android:layout_marginLeft="90dp"
+                            android:layout_marginTop="18dp"
+                            android:layout_width="150dp"
+                            android:layout_height="50dp"
+                            android:text="@string/calendario_ek2_string"
+                            />
+
+                    </RelativeLayout>
+
+                    <ImageView android:id="@+id/consultarlogo_ek1"
+                        android:src="@drawable/consultarlogo_ek1"
+                        android:contentDescription="consultarlogo_ek1"
+                        android:layout_marginStart="28dp"
+                        android:layout_marginTop="13dp"
+                        android:layout_width="36dp"
+                        android:layout_height="40dp" />
+
+                </RelativeLayout>
+
+
+                <RelativeLayout android:id="@+id/sesi_n_cita"
+                    android:layout_marginTop="236dp"
+                    android:layout_marginStart="50dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    >
+
+
+                    <RelativeLayout android:id="@+id/opciones_ek3"
+                        android:layout_marginTop="0dp"
+                        android:layout_marginStart="0dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        >
+
+                        <View   android:id="@+id/rectangle_3_ek6"
+                            android:background="@drawable/rectangle_3_ek6_shape"
+                            android:layout_marginStart="0dp"
+                            android:layout_marginTop="0dp"
+                            android:layout_width="259dp"
+                            android:layout_height="70dp" />
+
+                    </RelativeLayout>
+
+                    <TextView android:id="@+id/sesi_n_cita_ek1"
+                        android:textStyle="bold"
+                        android:textSize="24sp"
+                        android:textColor="@color/reservar_color"
+                        android:layout_marginLeft="92dp"
+                        android:layout_marginTop="17dp"
+                        android:layout_width="150dp"
+                        android:layout_height="50dp"
+                        android:text="@string/sesi_n_cita_ek1_string"
+                        />
+
+                    <ImageView android:id="@+id/a_adirlogo_ek1"
+                        android:src="@drawable/a_adirlogo_ek1"
+                        android:contentDescription="a_adirlogo_ek1"
+                        android:layout_marginStart="29dp"
+                        android:layout_marginTop="14dp"
+                        android:layout_width="36dp"
+                        android:layout_height="40dp" />
+
+                </RelativeLayout>
+
+
+                <RelativeLayout android:id="@+id/parte_inicial_arriba_ek6"
+                    android:layout_marginTop="18dp"
+                    android:layout_marginStart="21dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    >
+
+                    <TextView android:id="@+id/bienvenido_ek1"
+                        android:textStyle="bold"
+                        android:textSize="36sp"
+                        android:textColor="@color/reservar_color"
+                        android:layout_marginLeft="62dp"
+                        android:layout_marginTop="52dp"
+                        android:layout_width="227dp"
+                        android:layout_height="74dp"
+                        android:text="@string/bienvenido_ek1_string"
+                        />
+
+                    <TextView android:id="@+id/nombre_y_apellidos_ek1"
+                        android:textStyle="bold"
+                        android:textSize="20sp"
+                        android:textColor="@color/reservar_color"
+                        android:layout_marginLeft="69dp"
+                        android:layout_marginTop="104dp"
+                        android:layout_width="206dp"
+                        android:layout_height="41dp"
+                        android:text="@string/nombre_y_apellidos_ek1_string"
+                        />
+
+
+                    <RelativeLayout android:id="@+id/home_buttons_ek6"
+                        android:layout_marginTop="0dp"
+                        android:layout_marginStart="0dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        >
+
+                        <ImageView android:id="@+id/home_ek6"
+                            android:src="@drawable/home_ek6"
+                            android:contentDescription="home_ek6"
+                            android:layout_marginStart="0dp"
+                            android:layout_marginTop="0dp"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp" />
+
+                        <ImageView android:id="@+id/settings_ek6"
+                            android:src="@drawable/settings_ek6"
+                            android:contentDescription="settings_ek6"
+                            android:layout_marginStart="278dp"
+                            android:layout_marginTop="0dp"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp" />
+
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+
+
+
+        </RelativeLayout>
+
+    </ScrollView>
+</HorizontalScrollView>

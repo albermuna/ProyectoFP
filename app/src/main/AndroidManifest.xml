@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <application
+        android:name=".FirebasePers"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -10,19 +11,46 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.ProyectoFP"
+
         tools:targetApi="31">
         <activity
-            android:name=".pantallas.SesionPaciente"
+            android:name=".pantallas.doctor.GenerarInformePacienteDoctor"
             android:exported="false" />
         <activity
-            android:name=".pantallas.SesionDoctor"
+            android:name=".pantallas.doctor.IntroducirDniPacienteDoctor"
             android:exported="false" />
         <activity
-            android:name=".pantallas.PedirCitaPaciente"
+            android:name=".pantallas.paciente.ProximasCitasPaciente"
             android:exported="false" />
         <activity
-            android:name=".pantallas.ConsultarCalendarioDoctor"
+            android:name=".pantallas.PantallaInicio"
+            android:exported="false" />
+        <activity
+            android:name=".pantallas.paciente.SettingsPaciente"
+            android:exported="false" />
+        <activity
+            android:name=".pantallas.doctor.SettingsDoctor"
+            android:exported="false" />
+        <activity
+            android:name=".pantallas.paciente.fragmento.Fragmentos"
+            android:exported="false" />
+        <activity
+            android:name=".pantallas.paciente.InformesPaciente"
+            android:exported="false" />
+        <activity
+            android:name=".pantallas.doctor.FichaPaciente"
+            android:exported="false" />
+        <activity
+            android:name=".pantallas.paciente.SesionPaciente"
+            android:exported="false" />
+        <activity
+            android:name=".pantallas.doctor.SesionDoctor"
+            android:exported="false" />
+        <activity
+            android:name=".pantallas.paciente.PedirCitaPaciente"
+            android:exported="false" />
+        <activity
+            android:name=".pantallas.doctor.ConsultarCalendarioDoctor"
             android:exported="false" />
         <activity
             android:name=".pantallas.CrearUsuario"
