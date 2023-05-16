@@ -56,18 +56,7 @@ public class CrearUsuario extends AppCompatActivity {
                 if(nombreObj.equals("") || dniObj.equals("") || contraseñaObj.equals("")) {
                     comprobarDatosRellenados();
                 } else {
-                    ArrayList<Citas> listaCitas = new ArrayList<Citas>();
 
-                    if (esDoctor) {
-                        especialidadObj = variable.getText().toString();
-                        Doctores doc = new Doctores(dniObj, nombreObj, especialidadObj, listaCitas, contraseñaObj);
-                        gestion.introducirDoctor(doc);
-
-                    } else {
-                        edadObj = Integer.parseInt(variable.getText().toString());
-                        Pacientes pac = new Pacientes(dniObj, nombreObj, edadObj, listaCitas, contraseñaObj);
-                        gestion.introducirPaciente(pac);
-                    }
 
                     builder.setTitle("Añadir usuario");
                     builder.setMessage("El usuario se ha añadido correctamente");
@@ -86,10 +75,7 @@ public class CrearUsuario extends AppCompatActivity {
         nombreApellidosComp = nombreApellidos.getText().toString();
         dniComp = dni.getText().toString();
         contraseñaComp = contraseña.getText().toString();
-        variableComp = variable.getText().toString();
-        if (variableComp.equals("")) {
-            variable.setError("Required");
-        }
+
         if (nombreApellidosComp.equals("")) {
             nombreApellidos.setError("Required");
         }
