@@ -9,6 +9,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" >
 
+
             <RelativeLayout android:id="@+id/page_crear_usuario_ek1"
                 android:layout_marginTop="0dp"
                 android:layout_marginStart="0dp"
@@ -102,89 +103,81 @@
 
 
                 <RelativeLayout android:id="@+id/password2"
-                    android:layout_marginTop="443dp"
+                    android:layout_marginTop="427dp"
                     android:layout_marginStart="80dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     >
 
-
-
-                    <EditText android:id="@+id/confirmaContraseñaEditText"
+                    <EditText
+                        android:id="@+id/contraseña2EditText"
                         android:textSize="16sp"
                         android:textColor="@color/line_1_color"
                         android:layout_marginLeft="5dp"
                         android:layout_marginTop="0dp"
-                        android:layout_width="188dp"
+                        android:layout_width="180dp"
                         android:layout_height="wrap_content"
-                        android:text="Confirma tu contraseña"
-                        />
+                        android:hint="Confirma tu contraseña"/>
 
                 </RelativeLayout>
 
 
                 <RelativeLayout android:id="@+id/password1"
-                    android:layout_marginTop="399dp"
+                    android:layout_marginTop="380dp"
                     android:layout_marginStart="80dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     >
 
-
-
-                    <EditText android:id="@+id/contraseñaEditText"
+                    <EditText
+                        android:id="@+id/contraseña1EditText"
                         android:textSize="16sp"
                         android:textColor="@color/line_1_color"
                         android:layout_marginLeft="5dp"
                         android:layout_marginTop="0dp"
-                        android:layout_width="103dp"
+                        android:layout_width="180dp"
                         android:layout_height="wrap_content"
-                        android:text="Contraseña"
-                        />
+                        android:hint="Contraseña"/>
 
                 </RelativeLayout>
 
 
                 <RelativeLayout android:id="@+id/dni"
-                    android:layout_marginTop="354dp"
+                    android:layout_marginTop="335dp"
                     android:layout_marginStart="80dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     >
 
-
-
-                    <EditText android:id="@+id/dniEditText"
+                    <EditText
+                        android:id="@+id/dniEditText"
                         android:textSize="16sp"
                         android:textColor="@color/line_1_color"
                         android:layout_marginLeft="5dp"
                         android:layout_marginTop="0dp"
-                        android:layout_width="46dp"
+                        android:layout_width="180dp"
                         android:layout_height="wrap_content"
-                        android:text="@string/dni_ek1_string"
-                        />
+                        android:hint="Dni"/>
 
                 </RelativeLayout>
 
 
                 <RelativeLayout android:id="@+id/nombre_y_apellidos_ek2"
-                    android:layout_marginTop="305dp"
+                    android:layout_marginTop="290dp"
                     android:layout_marginStart="80dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     >
 
-
-
-                    <EditText android:id="@+id/nombreApellidosEditText"
+                    <EditText
+                        android:id="@+id/nombreApellidosEditText"
                         android:textSize="16sp"
                         android:textColor="@color/line_1_color"
                         android:layout_marginLeft="5dp"
                         android:layout_marginTop="0dp"
-                        android:layout_width="164dp"
+                        android:layout_width="180dp"
                         android:layout_height="wrap_content"
-                        android:text="Nombre y apellidos"
-                        />
+                        android:hint="Nombre y Apellidos"/>
 
                 </RelativeLayout>
 

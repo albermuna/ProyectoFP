@@ -73,7 +73,7 @@
                         android:layout_height="wrap_content"
                         >
 
-                        <View   android:id="@+id/rectangle_3_ek1"
+                        <View   android:id="@+id/proximasCitasButton"
                             android:background="@drawable/rectangle_3_ek1_shape"
                             android:layout_marginStart="0dp"
                             android:layout_marginTop="0dp"
@@ -111,7 +111,7 @@
                     android:layout_height="wrap_content"
                     >
 
-                    <View   android:id="@+id/rectangle_3_ek2"
+                    <View   android:id="@+id/informesButton"
                         android:background="@drawable/rectangle_3_ek2_shape"
                         android:layout_marginStart="0dp"
                         android:layout_marginTop="0dp"
@@ -155,7 +155,7 @@
                         android:layout_height="wrap_content"
                         >
 
-                        <View   android:id="@+id/rectangle_3_ek3"
+                        <View   android:id="@+id/pedirCitaButton"
                             android:background="@drawable/rectangle_3_ek3_shape"
                             android:layout_marginStart="0dp"
                             android:layout_marginTop="0dp"
@@ -204,7 +204,7 @@
                         android:text="@string/bienvenido_string"
                         />
 
-                    <TextView android:id="@+id/nombre_y_apellidos"
+                    <TextView android:id="@+id/nombrePacienteTextView"
                         android:textStyle="bold"
                         android:textSize="20sp"
                         android:textColor="@color/reservar_color"
@@ -223,7 +223,7 @@
                         android:layout_height="wrap_content"
                         >
 
-                        <ImageView android:id="@+id/home_ek1"
+                        <ImageView android:id="@+id/homeButton"
                             android:src="@drawable/home_ek1"
                             android:contentDescription="home_ek1"
                             android:layout_marginStart="0dp"
@@ -231,7 +231,7 @@
                             android:layout_width="40dp"
                             android:layout_height="40dp" />
 
-                        <ImageView android:id="@+id/settings_ek1"
+                        <ImageView android:id="@+id/settingsButton"
                             android:src="@drawable/settings_ek1"
                             android:contentDescription="settings_ek1"
                             android:layout_marginStart="278dp"

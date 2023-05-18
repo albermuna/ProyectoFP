@@ -8,7 +8,6 @@ public class Pacientes {
     private String dni;
     private String nombreApellidos;
 
-    private Integer edad;
 
     private String contraseña;
 
@@ -16,10 +15,9 @@ public class Pacientes {
     public Pacientes(){
 
     }
-    public Pacientes(String dni, String nombre, Integer edad, ArrayList<Citas> citas, String contraseña) {
+    public Pacientes(String dni, String nombre, ArrayList<Citas> citas, String contraseña) {
         this.dni = dni;
         this.nombreApellidos = nombre;
-        this.edad = edad;
         this.citasPaciente = citas;
         this.contraseña = contraseña;
     }
@@ -35,13 +33,7 @@ public class Pacientes {
 
     public void setContraseña(String contraseña) { this.contraseña = contraseña;}
 
-    public Integer getEdad() {
-        return edad;
-    }
 
-    public void setEdad(Integer edad) {
-        this.edad = edad;
-    }
 
     public List<Citas> getCitasPaciente() {
         return citasPaciente;
