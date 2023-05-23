@@ -20,10 +20,11 @@ import com.example.proyectofp.clasespojo.Doctores;
 import com.example.proyectofp.clasespojo.Pacientes;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class CrearUsuario extends AppCompatActivity {
 
-    private String nombreObj, dniObj, contraseñaObj, confirmarContraseña;
+    private String nombreObj, dniObj, contraseñaObj, confirmarContraseñaObj;
 
     private EditText nombreApellidos, dni,  contraseña, confirmaContraseña;
 
@@ -40,11 +41,10 @@ public class CrearUsuario extends AppCompatActivity {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         nombreApellidos = findViewById(R.id.nombreApellidosEditText);
         dni = findViewById(R.id.dniEditText);
-        contraseña = findViewById(R.id.contraseñaEditText);
-        confirmaContraseña = findViewById(R.id.confirmaContraseñaEditText);
+        contraseña = findViewById(R.id.contraseña1EditText);
+        confirmaContraseña = findViewById(R.id.contraseña2EditText);
 
         crearUsuarioButton = findViewById(R.id.crearUsuarioButton);
-
 
         crearUsuarioButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -53,28 +53,40 @@ public class CrearUsuario extends AppCompatActivity {
                 nombreObj = nombreApellidos.getText().toString();
                 dniObj = dni.getText().toString();
                 contraseñaObj = contraseña.getText().toString();
-                if(nombreObj.equals("") || dniObj.equals("") || contraseñaObj.equals("")) {
+                confirmarContraseñaObj = confirmaContraseña.getText().toString();
+                if(nombreObj.equals("") || dniObj.equals("") || contraseñaObj.equals("") || confirmarContraseñaObj.equals("")) {
                     comprobarDatosRellenados();
                 } else {
+                    if (contraseñaObj.equals(confirmarContraseñaObj)) {
+                        ArrayList<Citas> listaCitasPaciente = new ArrayList<Citas>();
+                        Pacientes nuevoPaciente = new Pacientes(dniObj, nombreObj, listaCitasPaciente, contraseñaObj);
+                        gestion.introducirPaciente(nuevoPaciente);
+                        builder.setTitle("Añadir usuario");
+                        builder.setMessage("El usuario se ha añadido correctamente");
+                        builder.setPositiveButton("Aceptar", null);
+                        AlertDialog dialog = builder.create();
+                        dialog.show();
+                        Intent i = new Intent(getApplicationContext(), InicioSesion.class);
+                        startActivity(i);
+                    }else {
+                        builder.setTitle("Añadir usuario");
+                        builder.setMessage("Las contraseñas que ha introducido no coinciden");
+                        builder.setPositiveButton("Aceptar", null);
+                        AlertDialog dialog = builder.create();
+                        dialog.show();
+                    }
 
-
-                    builder.setTitle("Añadir usuario");
-                    builder.setMessage("El usuario se ha añadido correctamente");
-                    builder.setPositiveButton("Aceptar", null);
-                    AlertDialog dialog = builder.create();
-                    dialog.show();
-                    Intent i = new Intent(getApplicationContext(), InicioSesion.class);
-                    startActivity(i);
                 }
             }
         });
     }
 
     private void comprobarDatosRellenados() {
-        String nombreApellidosComp, dniComp, contraseñaComp, variableComp;
+        String nombreApellidosComp, dniComp, contraseñaComp, comprobarContraseñaComp;
         nombreApellidosComp = nombreApellidos.getText().toString();
         dniComp = dni.getText().toString();
         contraseñaComp = contraseña.getText().toString();
+        comprobarContraseñaComp = confirmaContraseña.getText().toString();
 
         if (nombreApellidosComp.equals("")) {
             nombreApellidos.setError("Required");
@@ -83,6 +95,9 @@ public class CrearUsuario extends AppCompatActivity {
             dni.setError("Required");
         }
         if (contraseñaComp.equals("")) {
+            contraseña.setError("Required");
+        }
+        if (comprobarContraseñaComp.equals("")) {
             contraseña.setError("Required");
         }
     }

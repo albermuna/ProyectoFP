@@ -16,10 +16,8 @@ import android.widget.Toast;
 
 import com.example.proyectofp.R;
 import com.example.proyectofp.clasespojo.Pacientes;
-
 import com.example.proyectofp.pantallas.doctor.SesionDoctor;
 import com.example.proyectofp.pantallas.paciente.SesionPaciente;
-
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DataSnapshot;
@@ -28,7 +26,6 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
 
 public class InicioSesion extends AppCompatActivity {
@@ -37,7 +34,7 @@ public class InicioSesion extends AppCompatActivity {
     EditText dni, contraseña;
     Button entrar;
     Button crearUsuario;
-    DatabaseReference dbRef = FirebaseDatabase.getInstance().getReference();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,16 +43,14 @@ public class InicioSesion extends AppCompatActivity {
 
         contraseña = findViewById(R.id.contraseñaEditText);
         dni = findViewById(R.id.dniEditText);
-
         entrarButton = findViewById(R.id.entrarButton);
-        
+        DatabaseReference dbRef = FirebaseDatabase.getInstance().getReference();
         entrarButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 String dniUsuario = dni.getText().toString();
                 String contraseñaUsuario = contraseña.getText().toString().trim();
-                //validarPaciente(dniUsuario, contraseñaUsuario);
-                //validarDoctor(dniUsuario, contraseñaUsuario);
+
                 dbRef.child("Pacientes").addValueEventListener(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -99,8 +94,8 @@ public class InicioSesion extends AppCompatActivity {
         });
 
     }
+
+
+
+
 }
-
-
-
-
